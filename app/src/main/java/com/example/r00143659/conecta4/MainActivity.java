@@ -74,7 +74,19 @@ public class MainActivity extends AppCompatActivity {
         }
 
         game.ponerJugador(fila, columna);
+        int turnoJ = Game.JUGADOR;
+        if(game.comprobarCuatro(turnoJ)){
+            Toast.makeText(this, R.string.ganaste,
+                    Toast.LENGTH_LONG).show();
+            return;
+        }
         game.juegaMaquina();
+        int turnoM = Game.MAQUINA;
+        if(game.comprobarCuatro(turnoM)){
+            Toast.makeText(this, R.string.gano,
+                    Toast.LENGTH_LONG).show();
+            return;
+        }
         dibujarTablero();
     }
 

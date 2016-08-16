@@ -10,4 +10,6 @@
     <string name="gameOverTitle">Fin del juego</string>
     <string name="seleccione_el_juego_al_que_quiera_acceder">Seleccione el juego al que quiera acceder</string>
     <string name="conecta_4">Conecta 4</string>
+    <string name="ganaste">Ganaste!!</string>
+    <string name="gano">Gano la maquina, perdista :(</string>
 </resources>

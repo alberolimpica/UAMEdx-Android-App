@@ -60,6 +60,79 @@ public class Game {
         return true;
     }
 
+    public boolean comprobarFilas(int turno){
+
+        for(int x = 0; x<NCOLUMNAS; x++) {
+            for(int y = 0; y<NFILAS; y++) {
+
+            if (tablero[y][x] == turno) {
+                if (tablero[y + 1][x] == turno) {
+                    if (tablero[y + 2][x] == turno) {
+                        if (tablero[y + 3][x] == turno) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return false;
+    }
+    public boolean comprobarColumnas(int turno){
+        for(int x = 0; x<NFILAS; x++) {
+            for(int y = 0; y<NCOLUMNAS; y++) {
+            if (tablero[x][y] == turno) {
+                if (tablero[x][y + 1] == turno) {
+                    if (tablero[x][y + 2] == turno) {
+                        if (tablero[x][y + 3] == turno) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+        return false;
+    }
+    public boolean comprobarDiagonal(int turno){
+        for(int x = 0; x<NFILAS; x++) {
+            for(int y = 0; y<NCOLUMNAS; y++) {
+                if (tablero[x][y] == turno) {
+                    if (tablero[x+1][y + 1] == turno) {
+                        if (tablero[x+2][y + 2] == turno) {
+                            if (tablero[x+3][y + 3] == turno) {
+                                return true;
+                            }
+                        }
+                    }
+                } else if (tablero[x][y] == turno) {
+                    if (tablero[x-1][y - 1] == turno) {
+                        if (tablero[x-2][y - 2] == turno) {
+                            if (tablero[x-3][y - 3] == turno) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    public boolean comprobarCuatro(int turno){
+        if(comprobarDiagonal(turno)){
+            return true;
+
+        }else if(comprobarColumnas(turno)){
+            return true;
+
+        }else if(comprobarFilas(turno)){
+            return true;
+
+        }else{
+            return false;
+        }
+    }
+
     public boolean sePuedeColocarFicha(int i, int j) {
         if((estaVacio(i,j)) && esPosicionMasBaja(i,j)){
             return true;
@@ -69,7 +142,7 @@ public class Game {
     }
 
     public boolean esPosicionMasBaja(int i, int j){
-        if((j<=NFILAS)&&(tablero[i][j+1]!=VACIO )){
+        if((j == NCOLUMNAS)||(tablero[i+1][j]!=VACIO )){
             return true;
         }else{
             return false;
