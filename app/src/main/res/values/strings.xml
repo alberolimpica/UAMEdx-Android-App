@@ -6,4 +6,8 @@
     <string name="nosepuedecolocarficha">No se puede colocar ficha</string>
     <string name="fin_del_juego">La partida ha terminado</string>
     <string name="r1">r1</string>
+    <string name="cha_cha_cha">CHA CHA CHA</string>
+    <string name="gameOverTitle">Fin del juego</string>
+    <string name="seleccione_el_juego_al_que_quiera_acceder">Seleccione el juego al que quiera acceder</string>
+    <string name="conecta_4">Conecta 4</string>
 </resources>
