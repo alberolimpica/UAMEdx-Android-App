@@ -2,16 +2,18 @@ package com.example.r00143659.conecta4;
 
 import java.util.Random;
 
-public class Game {
+public class GameConecta4 {
     static final int NFILAS = 6;
     static final int NCOLUMNAS = 7;
+    static final int FIL = 3;
+    static final int COL = 4;
     static final int VACIO = 0;
     static final int MAQUINA = 1;
     static final int JUGADOR = 2;
 
     private int tablero[][];
 
-    public Game() {
+    public GameConecta4() {
         tablero = new int[NFILAS][NCOLUMNAS];
 
         for (int i = 0; i < NFILAS; i++)
@@ -63,7 +65,7 @@ public class Game {
     public boolean comprobarFilas(int turno){
 
         for(int x = 0; x<NCOLUMNAS; x++) {
-            for(int y = 0; y<NFILAS; y++) {
+            for(int y = 0; y<FIL; y++) {
 
             if (tablero[y][x] == turno) {
                 if (tablero[y + 1][x] == turno) {
@@ -80,7 +82,7 @@ public class Game {
     }
     public boolean comprobarColumnas(int turno){
         for(int x = 0; x<NFILAS; x++) {
-            for(int y = 0; y<NCOLUMNAS; y++) {
+            for(int y = 0; y<COL; y++) {
             if (tablero[x][y] == turno) {
                 if (tablero[x][y + 1] == turno) {
                     if (tablero[x][y + 2] == turno) {
@@ -95,8 +97,8 @@ public class Game {
         return false;
     }
     public boolean comprobarDiagonal(int turno){
-        for(int x = 0; x<NFILAS; x++) {
-            for(int y = 0; y<NCOLUMNAS; y++) {
+        for(int x = 0; x<FIL; x++) {
+            for(int y = 0; y<COL; y++) {
                 if (tablero[x][y] == turno) {
                     if (tablero[x+1][y + 1] == turno) {
                         if (tablero[x+2][y + 2] == turno) {
@@ -134,20 +136,17 @@ public class Game {
     }
 
     public boolean sePuedeColocarFicha(int i, int j) {
-        if((estaVacio(i,j)) && esPosicionMasBaja(i,j)){
-            return true;
+        if(estaVacio(i,j)){
+            if( i==0||!estaVacio((i-1),j)){
+                return true;
+            }else{return false;}
         }else{
             return false;
         }
+
+
     }
 
-    public boolean esPosicionMasBaja(int i, int j){
-        if((j == NCOLUMNAS)||(tablero[i+1][j]!=VACIO )){
-            return true;
-        }else{
-            return false;
-        }
-    }
 
     public void juegaMaquina() {
         int i;

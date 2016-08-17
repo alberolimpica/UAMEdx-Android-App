@@ -7,7 +7,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class Conecta4 extends AppCompatActivity {
 
     private final int ids[][] = {
             { R.id.c0, R.id.c1, R.id.c2, R.id.c3, R.id.c4, R.id.c5, R.id.c6 },
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
             { R.id.c35, R.id.c36, R.id.c37, R.id.c38, R.id.c39, R.id.c40,
                     R.id.c41 } };
 
-    private Game game;
+    private GameConecta4 gameConecta4;
     private TextView resultadoTextView;
 
 
@@ -30,9 +30,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // instanciar un objeto de tipo Game y asignar la referencia
-        //al miembro privado game.
-        game = new Game();
+
+        gameConecta4 = new GameConecta4();
 
         resultadoTextView = (TextView) findViewById(R.id.resultadoTextView);
     }
@@ -41,13 +40,13 @@ public class MainActivity extends AppCompatActivity {
     public void dibujarTablero() {
         int id = 0;
 
-        for (int i = 0; i < Game.NFILAS; i++)
-            for (int j = 0; j < Game.NCOLUMNAS; j++) {
-                if(game.estaJugador(i,j)){
-                    id = R.drawable.c4_button;
-                }else if(game.estaVacio(i,j)) {
+        for (int i = 0; i < GameConecta4.NFILAS; i++)
+            for (int j = 0; j < GameConecta4.NCOLUMNAS; j++) {
+                if(gameConecta4.estaJugador(i,j)){
                     id = R.drawable.c4_human_pressed_button;
-                }else if(game.estaMaquina(i,j)){
+                }else if(gameConecta4.estaVacio(i,j)) {
+                    id = R.drawable.c4_button;
+                }else if(gameConecta4.estaMaquina(i,j)){
                     id = R.drawable.c4_machine_pressed_button;
                 }
 
@@ -59,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
     public void pulsado(View v) {
         int fila, columna, id = v.getId();
 
-        if (game.tableroLleno()) {
+
+        if (gameConecta4.tableroLleno()) {
             resultadoTextView.setText(R.string.fin_del_juego);
             return;
         }
@@ -67,40 +67,43 @@ public class MainActivity extends AppCompatActivity {
         fila = deIdentificadorAFila(id);
         columna = deIdentificadorAColumna(id);
 
-        if (game.sePuedeColocarFicha(fila, columna) != true) {
+
+        if (!gameConecta4.sePuedeColocarFicha(fila, columna)) {
             Toast.makeText(this, R.string.nosepuedecolocarficha,
                     Toast.LENGTH_SHORT).show();
             return;
         }
 
-        game.ponerJugador(fila, columna);
-        int turnoJ = Game.JUGADOR;
-        if(game.comprobarCuatro(turnoJ)){
+        gameConecta4.ponerJugador(fila, columna);
+        int turnoJ = GameConecta4.JUGADOR;
+        if(gameConecta4.comprobarCuatro(turnoJ)){
             Toast.makeText(this, R.string.ganaste,
                     Toast.LENGTH_LONG).show();
+            dibujarTablero();
             return;
         }
-        game.juegaMaquina();
-        int turnoM = Game.MAQUINA;
-        if(game.comprobarCuatro(turnoM)){
+        gameConecta4.juegaMaquina();
+        int turnoM = GameConecta4.MAQUINA;
+        if(gameConecta4.comprobarCuatro(turnoM)){
             Toast.makeText(this, R.string.gano,
                     Toast.LENGTH_LONG).show();
+            dibujarTablero();
             return;
         }
         dibujarTablero();
     }
 
     private int deIdentificadorAFila(int id) {
-        for (int i = 0; i < Game.NFILAS; i++)
-            for (int j = 0; j < Game.NCOLUMNAS; j++)
+        for (int i = 0; i < GameConecta4.NFILAS; i++)
+            for (int j = 0; j < GameConecta4.NCOLUMNAS; j++)
                 if (ids[i][j] == id)
                     return i;
         return -1;
     }
 
     private int deIdentificadorAColumna(int id) {
-        for (int i = 0; i < Game.NFILAS; i++)
-            for (int j = 0; j < Game.NCOLUMNAS; j++)
+        for (int i = 0; i < GameConecta4.NFILAS; i++)
+            for (int j = 0; j < GameConecta4.NCOLUMNAS; j++)
                 if (ids[i][j] == id)
                     return j;
         return -1;

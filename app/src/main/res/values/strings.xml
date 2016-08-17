@@ -1,5 +1,4 @@
 <resources>
-
     <string name="app_name">Conecta 4</string>
     <string name="titulo">CONECTA 4</string>
     <string name="contentDescription">Botón de Conecta 4</string>
@@ -11,5 +10,7 @@
     <string name="seleccione_el_juego_al_que_quiera_acceder">Seleccione el juego al que quiera acceder</string>
     <string name="conecta_4">Conecta 4</string>
     <string name="ganaste">Ganaste!!</string>
-    <string name="gano">Gano la maquina, perdista :(</string>
+    <string name="gano">Gano la maquina, perdiste :(</string>
+    <string name="estavacio">Esta vacio</string>
+    <string name="eslamasbaja">Posicion mas baja</string>
 </resources>

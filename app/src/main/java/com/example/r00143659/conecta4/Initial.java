@@ -30,7 +30,7 @@ public class Initial extends AppCompatActivity implements View.OnClickListener{
             startActivity(new Intent(this, ChaChaCha.class));
 
         } else if (v.getId() == R.id.buttonConecta4) {
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, Conecta4.class));
 
         }
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:stretchColumns="*"
-    tools:context=".MainActivity">
+    tools:context=".Conecta4">
 
 <TextView
         android:id="@+id/tituloTextView"
