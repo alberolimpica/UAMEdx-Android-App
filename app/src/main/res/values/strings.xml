@@ -13,4 +13,6 @@
     <string name="gano">Gano la maquina, perdiste :(</string>
     <string name="estavacio">Esta vacio</string>
     <string name="eslamasbaja">Posicion mas baja</string>
+    <string name="enviar_mensaje">Enviar mensaje</string>
+    <string name="acerca_de">Acerca de</string>
 </resources>

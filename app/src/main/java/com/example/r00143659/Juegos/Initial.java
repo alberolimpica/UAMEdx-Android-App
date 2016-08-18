@@ -3,6 +3,8 @@ package com.example.r00143659.Juegos;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 
@@ -21,6 +23,15 @@ public class Initial extends AppCompatActivity implements View.OnClickListener{
         button = (Button) findViewById(com.example.r00143659.Juegos.R.id.buttonConecta4);
         button.setOnClickListener(this);
     }
+
+    //Menu opciones
+    public boolean onCreateOptionsMenu(Menu menu){
+        super.onCreateOptionsMenu(menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+    //Cuando se clickee en una de las opciones
 
 
 

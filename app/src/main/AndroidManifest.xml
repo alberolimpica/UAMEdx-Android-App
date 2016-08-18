@@ -19,6 +19,8 @@
         </activity>
         <activity android:name="com.example.r00143659.Juegos.ChaChaCha">
         </activity>
+        <activity android:name="com.example.r00143659.Juegos.About">
+        </activity>
     </application>
 
 </manifest>
