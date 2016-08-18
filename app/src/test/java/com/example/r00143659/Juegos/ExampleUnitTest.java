@@ -1,4 +1,4 @@
-package com.example.r00143659.conecta4;
+package com.example.r00143659.Juegos;
 
 import org.junit.Test;
 

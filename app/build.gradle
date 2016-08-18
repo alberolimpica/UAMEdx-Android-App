@@ -5,7 +5,7 @@ android {
     buildToolsVersion "24.0.1"
 
     defaultConfig {
-        applicationId "com.example.r00143659.conecta4"
+        applicationId "com.example.r00143659.Juegos"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1

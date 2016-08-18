@@ -1,4 +1,4 @@
-package com.example.r00143659.conecta4;
+package com.example.r00143659.Juegos;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,11 +14,11 @@ public class Initial extends AppCompatActivity implements View.OnClickListener{
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.initial);
+        setContentView(com.example.r00143659.Juegos.R.layout.initial);
 
-        Button button = (Button) findViewById(R.id.buttonChaChaCha);
+        Button button = (Button) findViewById(com.example.r00143659.Juegos.R.id.buttonChaChaCha);
         button.setOnClickListener(this);
-        button = (Button) findViewById(R.id.buttonConecta4);
+        button = (Button) findViewById(com.example.r00143659.Juegos.R.id.buttonConecta4);
         button.setOnClickListener(this);
     }
 
@@ -26,10 +26,10 @@ public class Initial extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.buttonChaChaCha) {
+        if (v.getId() == com.example.r00143659.Juegos.R.id.buttonChaChaCha) {
             startActivity(new Intent(this, ChaChaCha.class));
 
-        } else if (v.getId() == R.id.buttonConecta4) {
+        } else if (v.getId() == com.example.r00143659.Juegos.R.id.buttonConecta4) {
             startActivity(new Intent(this, Conecta4.class));
 
         }

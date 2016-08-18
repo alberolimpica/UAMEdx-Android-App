@@ -1,4 +1,4 @@
-package com.example.r00143659.conecta4;
+package com.example.r00143659.Juegos;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,13 +13,13 @@ public class ChaChaCha extends AppCompatActivity implements OnClickListener {
     GameChaChaCha gameChaChaCha;
 
     private final int ids[][]={
-            {0, 0, R.id.f1, R.id.f2, R.id.f3, 0, 0},
-            {0, 0, R.id.f4, R.id.f5, R.id.f6, 0, 0},
-            {R.id.f7, R.id.f8, R.id.f9, R.id.f10, R.id.f11, R.id.f12, R.id.f13},
-            {R.id.f14, R.id.f15, R.id.f16, R.id.f17, R.id.f18, R.id.f19, R.id.f20},
-            {R.id.f21, R.id.f22, R.id.f23, R.id.f24, R.id.f25, R.id.f26, R.id.f27},
-            {0, 0, R.id.f28, R.id.f29, R.id.f30, 0, 0},
-            {0, 0, R.id.f31, R.id.f32, R.id.f33, 0, 0},
+            {0, 0, com.example.r00143659.Juegos.R.id.f1, com.example.r00143659.Juegos.R.id.f2, com.example.r00143659.Juegos.R.id.f3, 0, 0},
+            {0, 0, com.example.r00143659.Juegos.R.id.f4, com.example.r00143659.Juegos.R.id.f5, com.example.r00143659.Juegos.R.id.f6, 0, 0},
+            {com.example.r00143659.Juegos.R.id.f7, com.example.r00143659.Juegos.R.id.f8, com.example.r00143659.Juegos.R.id.f9, com.example.r00143659.Juegos.R.id.f10, com.example.r00143659.Juegos.R.id.f11, com.example.r00143659.Juegos.R.id.f12, com.example.r00143659.Juegos.R.id.f13},
+            {com.example.r00143659.Juegos.R.id.f14, com.example.r00143659.Juegos.R.id.f15, com.example.r00143659.Juegos.R.id.f16, com.example.r00143659.Juegos.R.id.f17, com.example.r00143659.Juegos.R.id.f18, com.example.r00143659.Juegos.R.id.f19, com.example.r00143659.Juegos.R.id.f20},
+            {com.example.r00143659.Juegos.R.id.f21, com.example.r00143659.Juegos.R.id.f22, com.example.r00143659.Juegos.R.id.f23, com.example.r00143659.Juegos.R.id.f24, com.example.r00143659.Juegos.R.id.f25, com.example.r00143659.Juegos.R.id.f26, com.example.r00143659.Juegos.R.id.f27},
+            {0, 0, com.example.r00143659.Juegos.R.id.f28, com.example.r00143659.Juegos.R.id.f29, com.example.r00143659.Juegos.R.id.f30, 0, 0},
+            {0, 0, com.example.r00143659.Juegos.R.id.f31, com.example.r00143659.Juegos.R.id.f32, com.example.r00143659.Juegos.R.id.f33, 0, 0},
     };
 
 
@@ -29,7 +29,7 @@ public class ChaChaCha extends AppCompatActivity implements OnClickListener {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chachacha);
+        setContentView(com.example.r00143659.Juegos.R.layout.activity_chachacha);
 
         registerListeners();
         gameChaChaCha = new GameChaChaCha();
@@ -66,7 +66,7 @@ public class ChaChaCha extends AppCompatActivity implements OnClickListener {
         }
         setFigureFromGrid();
         if(gameChaChaCha.isGameFinished()){
-            Toast.makeText(this, R.string.gameOverTitle, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, com.example.r00143659.Juegos.R.string.gameOverTitle, Toast.LENGTH_LONG).show();
         }
     }
     private void setFigureFromGrid(){

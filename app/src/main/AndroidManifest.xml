@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.r00143659.conecta4">
+    package="com.example.r00143659.Juegos">
 
     <application
         android:allowBackup="true"
@@ -8,16 +8,16 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Initial">
+        <activity android:name="com.example.r00143659.Juegos.Initial">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Conecta4">
+        <activity android:name="com.example.r00143659.Juegos.Conecta4">
         </activity>
-        <activity android:name=".ChaChaCha">
+        <activity android:name="com.example.r00143659.Juegos.ChaChaCha">
         </activity>
     </application>
 

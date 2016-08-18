@@ -1,4 +1,4 @@
-package com.example.r00143659.conecta4;
+package com.example.r00143659.Juegos;
 
 /**
  * Created by R00143659 on 29/07/2016.
