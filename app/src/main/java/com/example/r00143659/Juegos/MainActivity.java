@@ -5,13 +5,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 /**
  * Created by R00143659 on 15/08/2016.
  */
-public class Initial extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -26,13 +27,32 @@ public class Initial extends AppCompatActivity implements View.OnClickListener{
 
     //Menu opciones
     public boolean onCreateOptionsMenu(Menu menu){
+        //Primero llamamos al metodo de la superclase
         super.onCreateOptionsMenu(menu);
+    //Obtenemos una instancia de la clase MenuInflater y llamamos al metodo inflate()
         MenuInflater inflater = getMenuInflater();
+        //El metodo inflate anade al menu de opciones de la actividad la interfaz
+        //grafica especificada en su primer argumento, que es el id del fichero xml
         inflater.inflate(R.menu.menu, menu);
         return true;
     }
     //Cuando se clickee en una de las opciones
 
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.menuAbout:
+                startActivity(new Intent(this, About.class));
+                return true;
+            case R.id.menuSend:
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("test/plain");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Juegos app");
+                intent.putExtra(Intent.EXTRA_TEXT, "Hola la app Juegos...");
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 
     @Override

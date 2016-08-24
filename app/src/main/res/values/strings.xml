@@ -15,4 +15,7 @@
     <string name="eslamasbaja">Posicion mas baja</string>
     <string name="enviar_mensaje">Enviar mensaje</string>
     <string name="acerca_de">Acerca de</string>
+    <string name="Conecta4">CONECTA 4</string>
+    <string name="gameOverMessage">¿Quiere jugar otra partida?</string>
+
 </resources>

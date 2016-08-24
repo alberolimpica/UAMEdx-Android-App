@@ -8,18 +8,25 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.r00143659.Juegos.Initial">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.r00143659.Juegos.Conecta4">
+        <activity android:name="com.example.r00143659.Juegos.Conecta4"
+            android:label="Conecta 4">
         </activity>
-        <activity android:name="com.example.r00143659.Juegos.ChaChaCha">
+        <activity android:name="com.example.r00143659.Juegos.ChaChaCha"
+            android:label="Cha cha cha">
         </activity>
-        <activity android:name="com.example.r00143659.Juegos.About">
+        <activity android:name="com.example.r00143659.Juegos.About"
+            android:theme="@android:style/Theme.Holo.Dialog"
+            android:label="">
+            <intent-filter>
+                <action android:name="android.intent.action.ABOUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 

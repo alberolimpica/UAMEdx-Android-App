@@ -134,4 +134,12 @@ public class GameChaChaCha {
             for (int j=0; j<SIZE; j++)
                 grid[i][j] = str.charAt(cont++)-'0';
     }
+
+    public void restart() {
+        for (int i = 0; i < SIZE; i++)
+            for (int j = 0; j < SIZE; j++)
+                grid[i][j] = CROSS[i][j];
+
+        gameState = State.READY_TO_PICK;
+    }
 }

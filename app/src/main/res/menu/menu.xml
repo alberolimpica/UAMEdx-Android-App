@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android">
-<item
-    android:id="@+id/menuAbout"
-    android:icon="@android:drawable/ic_menu_info_details"
-    android:title="@string/acerca_de"/>
-
+    <item
+        android:title="@string/acerca_de"
+        android:id="@+id/menuAbout"
+        android:icon="@android:drawable/ic_menu_info_details"/>
     <item
         android:id="@+id/menuSend"
         android:icon="@android:drawable/ic_menu_info_details"
         android:title="@string/enviar_mensaje"/>
-
-
-
-
 </menu>

@@ -69,7 +69,7 @@ public class ChaChaCha extends AppCompatActivity implements OnClickListener {
             Toast.makeText(this, com.example.r00143659.Juegos.R.string.gameOverTitle, Toast.LENGTH_LONG).show();
         }
     }
-    private void setFigureFromGrid(){
+    public void setFigureFromGrid(){
         RadioButton button;
 
         for(int i = 0; i < SIZE ; i++){
