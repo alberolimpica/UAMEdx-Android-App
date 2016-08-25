@@ -23,7 +23,7 @@ public class AlertDialogFragment extends DialogFragment {
 						dialog.dismiss();// Se elimina el dialogo
 					}
 				});
-		alertDialogBuilder.setNegativeButton("No", //Cuando se pu;sa no
+		alertDialogBuilder.setNegativeButton("No", //Cuando se puLsa no
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 						main.finish();//Termina la actividad y vuelve a la principal

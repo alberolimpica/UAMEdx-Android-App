@@ -67,6 +67,7 @@ public class ChaChaCha extends AppCompatActivity implements OnClickListener {
         setFigureFromGrid();
         if(gameChaChaCha.isGameFinished()){
             Toast.makeText(this, com.example.r00143659.Juegos.R.string.gameOverTitle, Toast.LENGTH_LONG).show();
+            new AlertDialogFragment().show(getFragmentManager(), "ALERT DIALOG");
         }
     }
     public void setFigureFromGrid(){
