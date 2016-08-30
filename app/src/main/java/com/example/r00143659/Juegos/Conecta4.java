@@ -1,7 +1,11 @@
 package com.example.r00143659.Juegos;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -21,7 +25,7 @@ public class Conecta4 extends AppCompatActivity {
             { com.example.r00143659.Juegos.R.id.c35, com.example.r00143659.Juegos.R.id.c36, com.example.r00143659.Juegos.R.id.c37, com.example.r00143659.Juegos.R.id.c38, com.example.r00143659.Juegos.R.id.c39, com.example.r00143659.Juegos.R.id.c40,
                     com.example.r00143659.Juegos.R.id.c41 } };
 
-    private GameConecta4 gameConecta4;
+    GameConecta4 gameConecta4;
     private TextView resultadoTextView;
 
 
@@ -35,7 +39,34 @@ public class Conecta4 extends AppCompatActivity {
 
         resultadoTextView = (TextView) findViewById(com.example.r00143659.Juegos.R.id.resultadoTextView);
     }
+    //Menu opciones
+    public boolean onCreateOptionsMenu(Menu menu){
+        //Primero llamamos al metodo de la superclase
+        super.onCreateOptionsMenu(menu);
+        //Obtenemos una instancia de la clase MenuInflater y llamamos al metodo inflate()
+        MenuInflater inflater = getMenuInflater();
+        //El metodo inflate anade al menu de opciones de la actividad la interfaz
+        //grafica especificada en su primer argumento, que es el id del fichero xml
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+    //Cuando se clickee en una de las opciones
 
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.menuAbout:
+                startActivity(new Intent(this, About.class));
+                return true;
+            case R.id.menuSend:
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("test/plain");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Juegos app");
+                intent.putExtra(Intent.EXTRA_TEXT, "Hola la app Juegos...");
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     public void dibujarTablero() {
         int id = 0;
@@ -63,6 +94,7 @@ public class Conecta4 extends AppCompatActivity {
             resultadoTextView.setText(com.example.r00143659.Juegos.R.string.fin_del_juego);
             Toast.makeText(this, com.example.r00143659.Juegos.R.string.fin_del_juego,
                     Toast.LENGTH_LONG).show();
+            new AlertDialogConecta4().show(getFragmentManager(), "ALERT DIALOG");
             return;
         }
 
@@ -73,6 +105,7 @@ public class Conecta4 extends AppCompatActivity {
         if (!gameConecta4.sePuedeColocarFicha(fila, columna)) {
             Toast.makeText(this, com.example.r00143659.Juegos.R.string.nosepuedecolocarficha,
                     Toast.LENGTH_SHORT).show();
+            new AlertDialogConecta4().show(getFragmentManager(), "ALERT DIALOG");
             return;
         }
 
@@ -82,6 +115,7 @@ public class Conecta4 extends AppCompatActivity {
             Toast.makeText(this, com.example.r00143659.Juegos.R.string.ganaste,
                     Toast.LENGTH_LONG).show();
             dibujarTablero();
+            new AlertDialogConecta4().show(getFragmentManager(), "ALERT DIALOG");
             return;
         }
         gameConecta4.juegaMaquina();
@@ -90,6 +124,7 @@ public class Conecta4 extends AppCompatActivity {
             Toast.makeText(this, com.example.r00143659.Juegos.R.string.gano,
                     Toast.LENGTH_LONG).show();
             dibujarTablero();
+            new AlertDialogConecta4().show(getFragmentManager(), "ALERT DIALOG");
             return;
         }
         dibujarTablero();

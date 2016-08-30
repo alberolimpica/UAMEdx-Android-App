@@ -165,4 +165,12 @@ public class GameConecta4 {
 
         tablero[fila][columna] = MAQUINA;
     }
+    public void restart() {
+        for (int i = 0; i < NFILAS; i++) {
+            for (int j = 0; j < NCOLUMNAS; j++){
+                tablero[i][j] = VACIO;
+            }
+        }
+
+    }
 }

@@ -1,8 +1,12 @@
 package com.example.r00143659.Juegos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.RadioButton;
@@ -26,7 +30,7 @@ public class ChaChaCha extends AppCompatActivity implements OnClickListener {
     private void log(String text) {
         Log.d("LifeCycleTest", text);
     }
-
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(com.example.r00143659.Juegos.R.layout.activity_chachacha);
@@ -34,10 +38,35 @@ public class ChaChaCha extends AppCompatActivity implements OnClickListener {
         registerListeners();
         gameChaChaCha = new GameChaChaCha();
         setFigureFromGrid();
-
-        log("created");
     }
+    //Menu opciones
+    public boolean onCreateOptionsMenu(Menu menu){
+        //Primero llamamos al metodo de la superclase
+        super.onCreateOptionsMenu(menu);
+        //Obtenemos una instancia de la clase MenuInflater y llamamos al metodo inflate()
+        MenuInflater inflater = getMenuInflater();
+        //El metodo inflate anade al menu de opciones de la actividad la interfaz
+        //grafica especificada en su primer argumento, que es el id del fichero xml
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+    //Cuando se clickee en una de las opciones
 
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.menuAbout:
+                startActivity(new Intent(this, About.class));
+                return true;
+            case R.id.menuSend:
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("test/plain");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Juegos app");
+                intent.putExtra(Intent.EXTRA_TEXT, "Hola la app Juegos...");
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
     public void onStart() {
         super.onStart();
         log("started");
