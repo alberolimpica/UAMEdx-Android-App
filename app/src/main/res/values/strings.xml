@@ -17,5 +17,14 @@
     <string name="acerca_de">Acerca de</string>
     <string name="Conecta4">CONECTA 4</string>
     <string name="gameOverMessage">¿Quiere jugar otra partida?</string>
+    <string name="initialImage">initial image</string>
+    <string name="bienvenidos_a_juegos">Bienvenidos a Juegos</string> <string name="firstCategoryPrefTitle">Datos personales</string>
+    <string name="editTextPrefTitle">Nombre del jugador</string>
+    <string name="editTextPrefSummary">Pulse para teclear el nombre del jugador</string>
+    <string name="secondCategoryPrefTitle">Ajustes del juego</string>
+    <string name="listPrefTitle">Color de las fichas</string>
+    <string name="listPrefSummary">Pulse para mostrar la lista</string>
+    <string name="listPrefDialogTitle">Elija la figura inicial</string>
+    <string name="preferencesText">Ajustes</string>
 
 </resources>

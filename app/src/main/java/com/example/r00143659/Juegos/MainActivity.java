@@ -17,7 +17,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
-        setContentView(com.example.r00143659.Juegos.R.layout.initial);
+        //setContentView(R.layout.inicio);
+        setContentView(R.layout.initial);
+
+//        Animation animation = AnimationUtils.loadAnimation(this, R.anim.initial);
+//        ImageView imageView = (ImageView) findViewById(R.id.initial);
+//        imageView.startAnimation(animation);
+
+
 
         Button button = (Button) findViewById(com.example.r00143659.Juegos.R.id.buttonChaChaCha);
         button.setOnClickListener(this);
@@ -49,6 +56,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Juegos app");
                 intent.putExtra(Intent.EXTRA_TEXT, "Hola la app Juegos...");
                 startActivity(intent);
+                return true;
+            case R.id.preferencias:
+                startActivity(new Intent(this, CCCPreference.class));
                 return true;
         }
         return super.onOptionsItemSelected(item);
